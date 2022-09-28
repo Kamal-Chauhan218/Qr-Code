@@ -2,18 +2,16 @@ import React from "react";
 import { useState } from "react";
 import Axios from "axios";
 import "../styles/form.css";
-import {useParams} from  'react-router-dom';
-
+import { useParams } from "react-router-dom";
+import env from "react-dotenv";
 function Testing() {
-  const params=useParams();
-  const {roll}=params;
+  const params = useParams();
+  const { roll } = params;
   console.log(params);
   const [comments, setComments] = useState([]);
 
   const changeRollNumber = async () => {
-    const response = await Axios(
-      `http://localhost:3000/api/v1/alldata/${roll}`
-    );
+    const response = await Axios(`${env.DEV_DOMAIN}/api/v1/alldata/${roll}`);
     setComments([response.data]);
   };
 

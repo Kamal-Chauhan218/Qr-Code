@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import Axios from "axios";
 import "../styles/form.css";
+import env from "react-dotenv";
 import { useParams } from "react-router-dom";
 function ShowData() {
   const params = useParams();
@@ -9,7 +10,7 @@ function ShowData() {
   console.log(params);
   const [comments, setComments] = useState([]);
   useEffect(() => {
-    Axios.get(`http://localhost:3000/api/v1/alldata/${roll}`).then(
+    Axios.get(`${env.DEV_DOMAIN}/api/v1/alldata/${roll}`).then(
       (response) => {
         setComments([response.data]);
       }

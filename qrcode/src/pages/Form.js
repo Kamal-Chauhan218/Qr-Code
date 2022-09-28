@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Axios from "axios";
 import "../styles/form.css";
+import env from "react-dotenv";
 function Form() {
   const [input, setInput] = useState({
     _id: "",
@@ -57,7 +58,7 @@ function Form() {
       BloodGroup: input.BloodGroup,
     };
     console.log(data);
-    Axios.post("http://localhost:3000/api/v1/newUserData", data)
+    Axios.post(`${env.DEV_DOMAIN}/api/v1/newUserData`, data)
       .then((response) => console.log(response))
       .catch((error) => console.log(error));
   }

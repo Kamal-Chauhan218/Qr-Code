@@ -2,14 +2,14 @@ import React from "react";
 import { useState } from "react";
 import Axios from "axios";
 import "../styles/form.css";
-
+import env from "react-dotenv";
 function Fetch() {
   const [RollNumber, setRollNumber] = useState("2010991907");
   const [comments, setComments] = useState([]);
 
   const changeRollNumber = async () => {
     const response = await Axios(
-      `http://localhost:3000/api/v1/alldata/${RollNumber}`
+      `${env.DEV_DOMAIN}/api/v1/alldata/${RollNumber}`
     );
     setComments([response.data]);
   };

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import QrCode from "qrcode.react";
+import env from "react-dotenv";
 function Qr() {
   const [RollNumber, setRollNumber] = useState("2010991907");
   const [imageSrc, setImageSrc] = useState(
     
   );
   const changeRollNumber = async () => {
-    const imageChange = `http://localhost:3001/data/${RollNumber}`;
+    const imageChange = `${env.DEV_DOMAIN}/data/${RollNumber}`;
     setImageSrc(imageChange);
   };
   return (
