@@ -57,7 +57,7 @@ function Form() {
       SchoolContact: input.SchoolContact,
       BloodGroup: input.BloodGroup,
     };
-    console.log(data);
+    alert('FORM SUBMITTED');
     Axios.post(
       `${process.env.REACT_APP_WEATHER_API_KEY}/api/v1/newUserData`,
       data
