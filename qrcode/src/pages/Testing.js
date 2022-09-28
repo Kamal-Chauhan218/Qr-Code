@@ -11,6 +11,7 @@ function Testing() {
   const [comments, setComments] = useState([]);
 
   const changeRollNumber = async () => {
+    console.log(env.DEV_DOMAIN);
     const response = await Axios(`${env.DEV_DOMAIN}/api/v1/alldata/${roll}`);
     setComments([response.data]);
   };

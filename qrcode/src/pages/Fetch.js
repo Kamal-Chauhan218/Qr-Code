@@ -2,14 +2,15 @@ import React from "react";
 import { useState } from "react";
 import Axios from "axios";
 import "../styles/form.css";
-import env from "react-dotenv";
+console.log(process.env.REACT_APP_WEATHER_API_KEY);
 function Fetch() {
   const [RollNumber, setRollNumber] = useState("2010991907");
   const [comments, setComments] = useState([]);
 
   const changeRollNumber = async () => {
+    console.log(process.env);
     const response = await Axios(
-      `${env.DEV_DOMAIN}/api/v1/alldata/${RollNumber}`
+      `${process.env.REACT_APP_WEATHER_API_KEY}/api/v1/alldata/${RollNumber}`
     );
     setComments([response.data]);
   };
@@ -17,7 +18,7 @@ function Fetch() {
   return (
     <div>
       <div class="input_container">
-        <span > ENTER ROLL NUMBER TO FETCH</span>
+        <span> ENTER ROLL NUMBER TO FETCH</span>
         <div class="input_box">
           <input
             type="text"

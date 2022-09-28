@@ -58,7 +58,10 @@ function Form() {
       BloodGroup: input.BloodGroup,
     };
     console.log(data);
-    Axios.post(`${env.DEV_DOMAIN}/api/v1/newUserData`, data)
+    Axios.post(
+      `${process.env.REACT_APP_WEATHER_API_KEY}/api/v1/newUserData`,
+      data
+    )
       .then((response) => console.log(response))
       .catch((error) => console.log(error));
   }
