@@ -10,8 +10,8 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route exact path="/Register" element={<Register />} />
-        <Route path="/newUserData" element={<GetData />} />
+        <Route  path="/Register" exact element={<Register />} />
+        <Route path="/newUserData" exact element={<GetData />} />
         <Route path="/QR" element={<QrMain />} />
         <Route path="data/:roll" element={<ShowDatas />} />
         <Route path="/" element={<Register />} />
