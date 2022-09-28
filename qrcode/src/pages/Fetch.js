@@ -2,15 +2,15 @@ import React from "react";
 import { useState } from "react";
 import Axios from "axios";
 import "../styles/form.css";
-console.log(process.env.REACT_APP_WEATHER_API_KEY);
+console.log(process.env.API_URL);
 function Fetch() {
   const [RollNumber, setRollNumber] = useState("2010991907");
   const [comments, setComments] = useState([]);
 
   const changeRollNumber = async () => {
-    console.log(`${process.env.REACT_APP_WEATHER_API_KEY}/api/v1/alldata/${RollNumber}`);
+    console.log(`${process.env.API_URL}/api/v1/alldata/${RollNumber}`);
     const response = await Axios(
-      `${process.env.REACT_APP_WEATHER_API_KEY}/api/v1/alldata/${RollNumber}`
+      `${process.env.API_URL}/api/v1/alldata/${RollNumber}`
     );
     setComments([response.data]);
   };

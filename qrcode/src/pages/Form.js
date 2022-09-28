@@ -59,7 +59,7 @@ function Form() {
     };
     console.log(data);
     Axios.post(
-      `${process.env.REACT_APP_WEATHER_API_KEY}/api/v1/newUserData`,
+      `${process.env.API_URL}/api/v1/newUserData`,
       data
     )
       .then((response) => console.log(response))

@@ -4,7 +4,7 @@ function Qr() {
   const [RollNumber, setRollNumber] = useState("2010991907");
   const [imageSrc, setImageSrc] = useState();
   const changeRollNumber = async () => {
-    const imageChange = `${process.env.REACT_APP_WEATHER_API_KEY}/data/${RollNumber}`;
+    const imageChange = `${process.env.API_URL}/data/${RollNumber}`;
     setImageSrc(imageChange);
   };
   return (
