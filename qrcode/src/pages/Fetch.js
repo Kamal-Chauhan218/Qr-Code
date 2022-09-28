@@ -8,7 +8,7 @@ function Fetch() {
   const [comments, setComments] = useState([]);
 
   const changeRollNumber = async () => {
-    console.log(process.env);
+    console.log(`${process.env.REACT_APP_WEATHER_API_KEY}/api/v1/alldata/${RollNumber}`);
     const response = await Axios(
       `${process.env.REACT_APP_WEATHER_API_KEY}/api/v1/alldata/${RollNumber}`
     );

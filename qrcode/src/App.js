@@ -15,7 +15,7 @@ function App(props) {
         <Route path="/newUserData" element={<GetData />} />
         <Route path="/QR" element={<QrMain />} />
         <Route path="data/:roll" element={<ShowDatas />} />
-        <Route path="*"  element={<NoFound />} />
+        <Route path="/" element={<Register />} />
       </Routes>
     </div>
   );
