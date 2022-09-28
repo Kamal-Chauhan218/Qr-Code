@@ -13,9 +13,9 @@ app.use(
     origin: "*",
   })
 );
-if (process.env.NODE_ENV === "production") {
+// if (process.env.NODE_ENV === "production") {
   app.use(express.static("qrcode/build"));
-}
+// }
 app.use("/api/v1", userdata);
 
 module.exports = app;
