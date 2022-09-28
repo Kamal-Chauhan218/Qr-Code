@@ -13,7 +13,7 @@ app.use(
     origin: "*",
   })
 );
-if (process.env.NODE_ENV === "production") {
+if (process.env.NPM_CONFIG_PRODUCTION === "production") {
   app.use(express.static("qrcode/build"));
 }
 app.use("/api/v1", userdata);
